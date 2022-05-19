@@ -6,7 +6,6 @@
 
 #include "Files.h"
 
-#define INVALID -1
 #define NULL_TERMINATOR 1
 #define FILE_PATH "..//files//"
 
@@ -21,7 +20,7 @@ bool readFileIntoBST(Tree *tree, char *filename)
 
     if (!pFile)
     {
-        return INVALID;
+        return false;
     }
 
     while (!feof(pFile))
