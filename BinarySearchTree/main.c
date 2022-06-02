@@ -144,10 +144,27 @@ int main()
 
     initializeTree(&tree);
 
-    insertInTree(&tree, 7);
-    insertInTree(&tree, 4);
-    insertInTree(&tree, 10);
-    insertInTree(&tree, 2);
+    insertInTree(&tree, 'Q');
+    insertInTree(&tree, 'U');
+    insertInTree(&tree, 'E');
+    insertInTree(&tree, 'S');
+    insertInTree(&tree, 'T');
+    insertInTree(&tree, 'A');
+    insertInTree(&tree, 'O');
+    insertInTree(&tree, 'F');
+    insertInTree(&tree, 'C');
+    insertInTree(&tree, 'I');
+    insertInTree(&tree, 'L');
+
+    printf("Is 3 in the tree = %d\n", searchInTree(&tree, 3));
+
+    printf("Is 7 in the tree = %d\n\n", searchInTree(&tree, 7));
+
+    printf("Number of nodes = %d\n\n", getNumberNodes(&tree));
+
+    printf("Height of the tree = %d\n\n", getHeight(&tree));
+
+    printf("Max value = %c\n\n", max(&tree));
 
     printf("In-Order Traversal\n");
     traverseTreeInOrder(&tree);

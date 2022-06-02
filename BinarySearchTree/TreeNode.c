@@ -18,6 +18,62 @@ TreeNode *initializeTreeNode(int value)
     return treeNode;
 }
 
+bool searchTreeNode(TreeNode **treeNode, int value)
+{
+    if (*treeNode == NULL)
+    {
+        return false;
+    }
+    else if ((*treeNode)->value == value)
+    {
+        return true;
+    }
+
+    if ((*treeNode)->value < value)
+    {
+        searchTreeNode((*treeNode)->left, value);
+    }
+    else
+    {
+        searchTreeNode((*treeNode)->right, value);
+    }
+
+    return false;
+}
+
+void getNumberTreeNodes(TreeNode *treeNode, int *number)
+{
+    *number += 1;
+
+    if (*treeNode->left != NULL)
+    {
+        getNumberTreeNodes(*treeNode->left, number);
+    }
+
+    if (*treeNode->right != NULL)
+    {
+        getNumberTreeNodes(*treeNode->right, number);
+    }
+}
+
+int getTreeNodeHeight(TreeNode *treeNode)
+{
+    if (treeNode == NULL)
+    {
+        return -1;
+    }
+
+    int heightLeft = getTreeNodeHeight(*treeNode->left);
+    int heightRight = getTreeNodeHeight(*treeNode->right);
+
+    if (heightLeft < heightRight)
+    {
+        return heightRight + 1;
+    }
+
+    return heightLeft + 1;
+}
+
 void insertTreeNode(TreeNode **treeNode, int value)
 {
     if (*treeNode == NULL)
@@ -43,7 +99,7 @@ void traverseTreeNodeInOrder(TreeNode *treeNode)
         traverseTreeNodeInOrder(*treeNode->left);
     }
 
-    printf("[%d] ", treeNode->value);
+    printf("[%c] ", treeNode->value);
 
     if (*treeNode->right != NULL)
     {
@@ -53,7 +109,7 @@ void traverseTreeNodeInOrder(TreeNode *treeNode)
 
 void traverseTreeNodePreOrder(TreeNode *treeNode)
 {
-    printf("[%d] ", treeNode->value);
+    printf("[%c] ", treeNode->value);
 
     if (*treeNode->left != NULL)
     {
@@ -78,5 +134,15 @@ void traverseTreeNodePostOrder(TreeNode *treeNode)
         traverseTreeNodeInOrder(*treeNode->right);
     }
 
-    printf("[%d] ", treeNode->value);
+    printf("[%c] ", treeNode->value);
+}
+
+int maxTreeNode(TreeNode *treeNode)
+{
+    if (*treeNode->right == NULL)
+    {
+        return treeNode->value;
+    }
+
+    return maxTreeNode(*treeNode->right);
 }

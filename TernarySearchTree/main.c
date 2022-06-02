@@ -15,10 +15,10 @@
     • Value - To store the value.
     • End of string - This marks if a string has ended to get the entire word.
 
-    Ternary search tree vs trie
-    • TST are way more efficient regarding space than trie since they only store 3 pointers, instead of 26, that the trie does.
+    Ternary search tree vs TRIE
+    • TSTs are way more efficient regarding space than TRIEs since they only store 3 pointers, instead of 26, that the trie does.
     • Tries are suitable when there is a proper distribution of words over the alphabets so that spaces are utilized most efficiently.
-      Otherwise, ternary search trees are better. Ternary search trees are efficient to use(in terms of space) when the strings to be stored share a
+      Otherwise, ternary search trees are better. Ternary search trees are efficient to use (in terms of space) when the strings to be stored share a
       common prefix.
 
     Insertion example
@@ -66,7 +66,7 @@
 
     Applications
     • Autocomplete: Given a word find the next word in the dictionary.
-    • Spell checking: A word can be parallelly searched in the ternary search tree to check for correct spelling.
+    • Spell checking: A word can be parallel searched in the ternary search tree to check for correct spelling.
  */
 
 int main()
